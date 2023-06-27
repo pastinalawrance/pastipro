@@ -1,7 +1,3 @@
-# pastipro
-Ecommerce Shopping Project  
-
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
