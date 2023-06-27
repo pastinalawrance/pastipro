@@ -1,110 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-    <style>
-        body {
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-        }
-
-        nav {
-            display: flex;
-            margin-left: auto;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 10px;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background-color: #555;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-        }
-
-        main h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        main p {
-            font-size: 18px;
-            text-align: center;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .image {
-            width: 200px;
-            height: 200px;
-            margin: 10px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .footer-content p {
-            margin: 0;
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
+<title>Login Page</title>
 </head>
 <body>
-    <header>
-        <h1> Pasti Ecommerce</h1>
-        <nav>
-            <a href="Products.jsp">Products</a>
-            <a href="cart.jsp">Cart</a>
-            <a href="Logout.jsp">Logout</a>
-            <a href="Contactus.jsp">Contact Us</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Welcome to Pasti Ecommerce!</h2>
-        <p>Explore our wide range of products and enjoy a convenient online shopping experience.</p>
-        <div class="image-container">
-            <img src="https://sathya.in/media/3420/catalog/mobiles.jpg" alt="Mobiles" class="image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwiLdlpogoIqb784-rj3XFi-zrcvI7QsX6kg&usqp=CAU" alt="Image 2" class="image">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/mini-laptops-2023-641b6830e952b.jpg?crop=1.00xw:0.505xh;0,0.246xh&resize=1200:*" alt="Mini Laptops" class="image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4BRmrtbMXfKyJKuV50Nxipt2Pu_zoBslgZQ&usqp=CAU" alt="Image 4" class="image">
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <p>2023 Pasti Ecommerce. All rights reserved.</p>
-        </div>
-    </footer>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+header .header{
+  background-color: blue;
+  height: 45px;
+}
+header a img{
+  width: 134px;
+margin-top: 4px;
+}
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.login-page .form .login{
+  margin-top: -31px;
+margin-bottom: 26px;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}</style>
+<script>
+function validateForm() {
+  var email = document.forms["loginForm"]["email"].value;
+  var password = document.forms["loginForm"]["password"].value;
+
+  if (email === "" || password === "") {
+    alert("Please enter both email and password");
+    return false;
+  }
+}
+</script>
+<div class="login-page">
+  <div class="form">
+    <div class="login">
+      <div class="login-header">
+        <h3>Login Page</h3>
+        <br>
+      </div>
+      <form name="loginForm" action="Login.jsp" method="post" onsubmit="return validateForm();">
+        <input type="text" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <button type="submit">Login</button>
+        <p class="message">Not registered? <a href="Signup.jsp">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
